@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+
+  --color-surface: #f7f9fb;
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #45464d;
+  --color-primary: #000000;
+  --color-primary-container: #131b2e;
+  --color-on-primary-container: #7c839b;
+  --color-secondary: #006c49;
+  --color-secondary-container: #6cf8bb;
+  --color-tertiary-container: #001a42;
+  --color-on-tertiary-container: #3980f4;
+  --color-outline-variant: #c6c6cd;
+  --color-surface-container: #eceef0;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container-highest: #e0e3e5;
+
+  --spacing-stack-sm: 12px;
+  --spacing-stack-md: 24px;
+  --spacing-stack-lg: 48px;
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image: 
+      linear-gradient(to right, var(--color-outline-variant) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-outline-variant) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.1;
+  }
+  .elevation-1 {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
+  }
+  .elevation-2 {
+    box-shadow: 0px 8px 30px rgba(15, 23, 42, 0.1);
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+}
+
+body {
+  @apply font-sans;
+}
+
+h1, h2, h3, .font-display {
+  @apply font-display tracking-tight;
+}
